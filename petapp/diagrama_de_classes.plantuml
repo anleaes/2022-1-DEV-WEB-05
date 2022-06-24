@@ -1,0 +1,49 @@
+@startuml herenca composicao
+
+title Diagrama de Classes
+
+class Clientes{
+    - nome:String 
+    - endereco: String
+    - cpf: Int 
+    + construtor(nome, endereco, cpf)
+}
+
+/' Um animal pertence somente a um cliente  '/
+class Animais{
+    - nome: String 
+    - peso: String
+    - raca: Int 
+    - clientes: Clientes
+    + construtor(nome, peso, raca, clientes)
+}
+
+class Atendimentos{
+    - data: Date 
+    - animais: Animais
+    - servicos: Servicos
+    + construtor(data, animais, servicos)
+}
+
+/' Um servico pode ter mais de um tipo  '/
+class Servicos{
+    - descricao: String
+    - valor: Float
+    - tempo_execucao: Float
+    - tipos: Tipos
+    + construtor(descricao, valor, tempo_execucao, tipos)
+}
+
+class Tipos{
+    - nome: String
+    - descricao: String
+    + construtor(pessoa, cnpj)
+}
+
+Clientes --* Animais
+Servicos o-- Tipos
+Animais --o Atendimentos
+Servicos --o Atendimentos
+
+
+@enduml

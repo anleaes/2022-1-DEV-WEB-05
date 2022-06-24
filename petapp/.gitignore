@@ -1,2 +1,3 @@
 petapp/__pycache__/*
 apps/core/__pycache__/*
+apps/core/migrations/__pycache__/*
