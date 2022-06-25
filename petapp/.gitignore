@@ -3,3 +3,5 @@ apps/core/__pycache__/*
 apps/core/migrations/__pycache__/*
 apps/tipos/__pycache__/*
 apps/tipos/migrations/__pycache__/*
+apps/clientes/__pycache__/*
+apps/clientes/migrations/__pycache__/*
