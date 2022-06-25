@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <title>{% block title %}Nome do meu App{% endblock title %}</title>
+    <title>{% block title %}PetApp{% endblock title %}</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -24,7 +24,7 @@
                         <a class="dropdown-item" href="#">Clientes</a>
                         <a class="dropdown-item" href="#">Animais</a>
                         <a class="dropdown-item" href="#">Serviços</a>
-                        <a class="dropdown-item" href="#">Tipos Serviços</a>
+                        <a class="dropdown-item" href="{% url 'tipos:list_tipos' %}">Tipos Serviços</a>
                         <a class="dropdown-item" href="#">Atendimentos</a>
                     </div>
                 </li>
