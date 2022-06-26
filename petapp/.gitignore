@@ -5,3 +5,7 @@ apps/tipos/__pycache__/*
 apps/tipos/migrations/__pycache__/*
 apps/servicos/__pycache__/*
 apps/servicos/migrations/__pycache__/*
+apps/clientes/__pycache__/*
+apps/clientes/migrations/__pycache__/*
+apps/animais/__pycache__/*
+apps/animais/migrations/__pycache__/*
