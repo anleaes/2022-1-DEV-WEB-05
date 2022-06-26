@@ -9,3 +9,5 @@ apps/clientes/__pycache__/*
 apps/clientes/migrations/__pycache__/*
 apps/animais/__pycache__/*
 apps/animais/migrations/__pycache__/*
+apps/contas/__pycache__/*
+apps/contass/migrations/__pycache__/*

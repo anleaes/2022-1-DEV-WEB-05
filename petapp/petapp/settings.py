@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'servicos.apps.ServicosConfig',
     'clientes.apps.ClientesConfig',
     'animais.apps.AnimaisConfig',
+    'contas.apps.ContasConfig',
     
 ]
 
