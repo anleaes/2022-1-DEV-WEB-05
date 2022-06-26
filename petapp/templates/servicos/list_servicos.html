@@ -1,0 +1,65 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Lista de Servico - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+    <div class="container">
+        <br />
+        <h5><b>Lista de Servico</b></h5>
+        <div class="row">
+            <div class ="col-md-12">
+                <br />
+                    <a href="{% url 'servicos:add_servico' %}">Cadastro de novos Servicos</a>
+                   <br />
+                <br />
+                <table class="table table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Descricao</th>
+                    <th scope="col">Tempo de Execucao</th>
+                    <th scope="col">Ativo</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for servico in servicos %}
+                        <tr>
+                            <th scope="row">{{ servico.id }}</th>
+                            <td>{{ servico.valor }}</td>
+                            <td>{{ servico.descricao }}</td>
+                            <td>{{ servico.tempodeexecucao }}</td>
+                            <td>
+                                {% if servico.is_active == True %}
+                                    Ativo
+                                {% endif %}
+                                {% if servico.is_active == False %}
+                                    Inativo
+                                {% endif %}
+                            </td>
+                            <td>{{ servico.tipo }}</td>
+                            <td>
+                                <a href="{% url 'servicos:edit_servico' servico.id %}" class="btn btn-primary btn-sm">Editar</a>
+                            </td>
+                            <td>    
+                                <a href="{% url 'servicos:delete_servico' servico.id %}" class="btn btn-danger btn-sm ">Excluir</a>
+                            </td>
+                        </tr> 
+                    {% endfor %}
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}
+

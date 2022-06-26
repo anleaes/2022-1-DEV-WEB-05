@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'core.apps.CoreConfig', 
     'tipos.apps.TiposConfig',
+    'servicos.apps.ServicosConfig',
 ]
 
 MIDDLEWARE = [
