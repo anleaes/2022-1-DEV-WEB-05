@@ -44,3 +44,16 @@ def delete_animal(request, id_animal):
     animal = Animal.objects.get(id=id_animal)
     animal.delete()
     return redirect('animais:list_animais')
+
+def search_animais(request):
+    template_name = 'animais/list_animais.html'
+    query = request.GET.get('query')
+    #client_socialnetworks = ClientSocialnetwork.objects.filter()
+    #socialnetworks = Socialnetwork.objects.filter()
+    animais = Animal.objects.filter(name__icontains=query)
+    context = {
+        'animais': animais,
+        #'socialnetworks': socialnetworks,
+        #'client_socialnetworks': client_socialnetworks
+    }
+    return render(request,template_name, context)
