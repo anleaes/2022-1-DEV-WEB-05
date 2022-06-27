@@ -35,7 +35,7 @@ def edit_cliente(request, id_cliente):
         form = ClienteForm(request.POST, instance=cliente)
         if form.is_valid():
             form.save()
-            return redirect('categories:list_categories')
+            return redirect('clientes:list_clientes')
     form = ClienteForm(instance=cliente)
     context['form'] = form
     return render(request, template_name, context)
@@ -43,4 +43,4 @@ def edit_cliente(request, id_cliente):
 def delete_cliente(request, id_cliente):
     cliente = Cliente.objects.get(id=id_cliente)
     cliente.delete()
-    return redirect('categories:list_categories')
+    return redirect('clientes:list_clientes')

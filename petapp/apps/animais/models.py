@@ -1,5 +1,5 @@
 from django.db import models
-#from animais.models import Animal
+from clientes.models import Cliente
 
 # Create your models here.
 
@@ -12,7 +12,8 @@ class Animal(models.Model):
     is_active = models.BooleanField('Ativo', default=False)
     photo = models.ImageField('Foto', upload_to='photos')
     doc = models.FileField('Documentos', upload_to='docs')
-    #category = models.ForeignKey(Animal, on_delete=models.CASCADE)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
+    #cliente = models.ManyToManyField(Cliente, through='Cliente', blank=True)
     
     class Meta:
         verbose_name = 'Animal'

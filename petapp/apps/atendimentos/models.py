@@ -1,5 +1,6 @@
 from django.db import models
-#from atendimentos.models import Atendimento
+from animais.models import Animal
+from servicos.models import Servico 
 
 # Create your models here.
 
@@ -12,7 +13,8 @@ class Atendimento(models.Model):
     is_active = models.BooleanField('Ativo', default=False)
     photo = models.ImageField('Foto', upload_to='photos')
     doc = models.FileField('Documentos', upload_to='docs')
-    #category = models.ForeignKey(Atendimento, on_delete=models.CASCADE)
+    animal = models.ForeignKey(Animal, on_delete=models.CASCADE)
+    atendimento_servico = models.ManyToManyField(Servico, through='AtendimentoServico', blank=True)
     
     class Meta:
         verbose_name = 'Atendimento'
@@ -21,3 +23,15 @@ class Atendimento(models.Model):
 
     def __str__(self):
         return self.name
+
+class AtendimentoServico(models.Model):
+    atendimento = models.ForeignKey(Atendimento, on_delete=models.CASCADE)
+    servico = models.ForeignKey(Servico, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Itens de Servico'
+        verbose_name_plural = 'Itens de Servicos '
+        ordering =['id']
+
+    def __str__(self):
+        return self.servico.descricao

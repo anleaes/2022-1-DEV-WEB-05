@@ -25,9 +25,9 @@
                     <th scope="col">Descricao</th>
                     <th scope="col">Data de fabricacao</th>
                     <th scope="col">Ativo</th>
-                    <th scope="col">Categoria</th>
                     <th scope="col">Foto</th>
                     <th scope="col">Documento</th>
+                    <th scope="col">Dono</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     </tr>
@@ -47,13 +47,13 @@
                                     Inativo
                                 {% endif %}
                             </td>
-                            <td>{{ animal.category }}</td>
                             <td>
                                 <img src="{{ animal.photo.url }}" width="50" height="50">
                             </td>
                             <td>
                                 <a href="{{ animal.doc.url }}" >{{ animal.doc.url }}</a>
                             </td>
+                            <td>{{ animal.cliente }}</td>
                             <td>
                                 <a href="{% url 'animais:edit_animal' animal.id %}" class="btn btn-primary btn-sm">Editar</a>
                             </td>

@@ -14,7 +14,7 @@ def add_animal(request):
             f = form.save(commit=False)
             f.save()
             form.save_m2m()
-            return redirect('animais:list_animals')
+            return redirect('animais:list_animais')
     form = AnimalForm()
     context['form'] = form
     return render(request, template_name, context)

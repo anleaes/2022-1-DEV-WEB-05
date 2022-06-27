@@ -25,9 +25,10 @@
                     <th scope="col">Descricao</th>
                     <th scope="col">Data de fabricacao</th>
                     <th scope="col">Ativo</th>
-                    <th scope="col">Categoria</th>
                     <th scope="col">Foto</th>
                     <th scope="col">Documento</th>
+                    <th scope="col">Animal</th>
+                    <th scope="col">Servicos</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     </tr>
@@ -47,12 +48,23 @@
                                     Inativo
                                 {% endif %}
                             </td>
-                            <td>{{ atendimento.category }}</td>
                             <td>
                                 <img src="{{ atendimento.photo.url }}" width="50" height="50">
                             </td>
                             <td>
                                 <a href="{{ atendimento.doc.url }}" >{{ atendimento.doc.url }}</a>
+                            </td>
+                            <td>{{ atendimento.animal }}</td>
+                            <td>
+                                {% for atendimento_servico in atendimento_servicos %}
+                                    {% for servico in servicos %}
+                                        {% if atendimento_servico.servico_id == servico.id %}
+                                                {% if atendimento_servico.atendimento_id == atendimento.id %}
+                                                    - {{ servico.descricao }} <br>
+                                                {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
                             </td>
                             <td>
                                 <a href="{% url 'atendimentos:edit_atendimento' atendimento.id %}" class="btn btn-primary btn-sm">Editar</a>

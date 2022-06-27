@@ -25,7 +25,6 @@
                     <th scope="col">Valor</th>
                     <th scope="col">Descricao</th>
                     <th scope="col">Tempo de Execucao</th>
-                    <th scope="col">Ativo</th>
                     <th scope="col">Tipo</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
@@ -37,15 +36,7 @@
                             <th scope="row">{{ servico.id }}</th>
                             <td>{{ servico.valor }}</td>
                             <td>{{ servico.descricao }}</td>
-                            <td>{{ servico.tempodeexecucao }}</td>
-                            <td>
-                                {% if servico.is_active == True %}
-                                    Ativo
-                                {% endif %}
-                                {% if servico.is_active == False %}
-                                    Inativo
-                                {% endif %}
-                            </td>
+                            <td>{{ servico.tempoexecucao }}</td>
                             <td>{{ servico.tipo }}</td>
                             <td>
                                 <a href="{% url 'servicos:edit_servico' servico.id %}" class="btn btn-primary btn-sm">Editar</a>

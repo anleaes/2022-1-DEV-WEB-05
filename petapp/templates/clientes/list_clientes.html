@@ -29,11 +29,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for cliente in cliente %}
+                    {% for cliente in clientes %}
                         <tr>
                             <th scope="row">{{ cliente.id }}</th>
-                            <td>{{ cliente.name }}</td>
-                            <td>{{ cliente.description }}</td>
+                            <td>{{ cliente.nome }}</td>
+                            <td>{{ cliente.descricao }}</td>
                             <td>
                                 <a href="{% url 'clientes:edit_cliente' cliente.id %}" class="btn btn-primary btn-sm">Editar</a>
                             </td>
