@@ -22,8 +22,12 @@
                    {{ form.nome|add_class:"form-control" }}
                 </div>
                 <div class="form-group">
-                    <label for="{{ form.descricao.id_for_label }}">Descricao</label>
-                    {{ form.descricao|add_class:"form-control" }}
+                    <label for="{{ form.endereco.id_for_label }}">Endereco</label>
+                    {{ form.endereco|add_class:"form-control" }}
+                 </div>
+                 <div class="form-group">
+                    <label for="{{ form.cpf.id_for_label }}">Cpf</label>
+                    {{ form.cpf|add_class:"form-control" }}
                  </div>
                     <button type="submit" class="btn btn-primary">Salvar</button>       
                 </form>
