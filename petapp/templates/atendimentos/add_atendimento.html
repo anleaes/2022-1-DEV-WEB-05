@@ -18,7 +18,7 @@
                 <form action="" method="POST" enctype="multipart/form-data"> 
                 {% csrf_token %}
                 <div class="form-group">
-                   <label for="{{ form.name.id_for_label }}">Nome</label>
+                   <label for="{{ form.name.id_for_label }}">Codigo</label>
                    {{ form.name|add_class:"form-control" }}
                 </div>
                 <div class="form-group">
@@ -26,24 +26,8 @@
                     {{ form.description|add_class:"form-control" }}
                 </div>
                 <div class="form-group">
-                    <label for="{{ form.date_fabrication.id_for_label }}">Data de fabricacao</label>
+                    <label for="{{ form.date_fabrication.id_for_label }}">Data</label>
                     {{ form.date_fabrication|add_class:"form-control" }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.is_active.id_for_label }}">Ativar</label>
-                    {{ form.is_active }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.category.id_for_label }}">Categoria</label>
-                    {{ form.category|add_class:"form-control" }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.photo.id_for_label }}">Foto</label>
-                    {{ form.photo|add_class:"form-control-file" }}
-                </div>
-                <div class="form-group">
-                    <label for="{{ form.doc.id_for_label }}">Documentos</label>
-                    {{ form.doc|add_class:"form-control-file" }}
                 </div>
                 <div class="form-group">
                     <label for="{{ form.animal.id_for_label }}">Animal</label>

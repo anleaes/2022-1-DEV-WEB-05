@@ -2,7 +2,7 @@
 
 {% block title %}
 
-    Lista de Produtos - {{ block.super }}
+    Lista de Animais - {{ block.super }}
 
 {% endblock title %}
 
@@ -35,7 +35,7 @@
                     {% for animal in animais %}
                         <tr>
                             <th scope="row">{{ animal.id }}</th>
-                            <td>{{ animal.name }}</td>
+                            <td>{{ animal.nome }}</td>
                             <td>{{ animal.peso }}</td>
                             <td>{{ animal.raca }}</td>
                             <td>

@@ -2,7 +2,7 @@
 
 {% block title %}
 
-    Lista de Atendimentos - {{ block.super }}
+    Prontuario de Atendimentos - {{ block.super }}
 
 {% endblock title %}
 
@@ -10,7 +10,7 @@
 
     <div class="container">
         <br />
-        <h5><b>Lista de Atendimentos</b></h5>
+        <h5><b>Prontuario de Atendimentos</b></h5>
         <div class="row">
             <div class ="col-md-12">
                 <br />
@@ -21,12 +21,9 @@
                 <thead>
                     <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nome</th>
+                    <th scope="col">Codigo</th>
                     <th scope="col">Descricao</th>
-                    <th scope="col">Data de fabricacao</th>
-                    <th scope="col">Ativo</th>
-                    <th scope="col">Foto</th>
-                    <th scope="col">Documento</th>
+                    <th scope="col">Data</th>
                     <th scope="col">Animal</th>
                     <th scope="col">Servicos</th>
                     <th scope="col"></th>
@@ -40,20 +37,6 @@
                             <td>{{ atendimento.name }}</td>
                             <td>{{ atendimento.description }}</td>
                             <td>{{ atendimento.date_fabrication }}</td>
-                            <td>
-                                {% if atendimento.is_active == True %}
-                                    Ativo
-                                {% endif %}
-                                {% if atendimento.is_active == False %}
-                                    Inativo
-                                {% endif %}
-                            </td>
-                            <td>
-                                <img src="{{ atendimento.photo.url }}" width="50" height="50">
-                            </td>
-                            <td>
-                                <a href="{{ atendimento.doc.url }}" >{{ atendimento.doc.url }}</a>
-                            </td>
                             <td>{{ atendimento.animal }}</td>
                             <td>
                                 {% for atendimento_servico in atendimento_servicos %}

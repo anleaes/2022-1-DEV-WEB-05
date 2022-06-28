@@ -50,7 +50,7 @@ def search_animais(request):
     query = request.GET.get('query')
     #client_socialnetworks = ClientSocialnetwork.objects.filter()
     #socialnetworks = Socialnetwork.objects.filter()
-    animais = Animal.objects.filter(name__icontains=query)
+    animais = Animal.objects.filter(nome__icontains=query)
     context = {
         'animais': animais,
         #'socialnetworks': socialnetworks,
