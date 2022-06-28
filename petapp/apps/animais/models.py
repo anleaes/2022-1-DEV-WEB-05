@@ -7,7 +7,7 @@ class Animal(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     nome = models.CharField('Nome', max_length=50)
-    peso = models.TextField('Peso', max_length=10)
+    peso = models.CharField('Peso', max_length=10)
     raca = models.CharField('raca', max_length=20)
     photo = models.ImageField('Foto', upload_to='photos')
     doc = models.FileField('Documentos', upload_to='docs')
