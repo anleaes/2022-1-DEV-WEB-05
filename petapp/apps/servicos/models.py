@@ -6,7 +6,7 @@ class Servico(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     descricao = models.TextField('Descricao', max_length=100)
     valor = models.FloatField('valor', null=True, blank=True, default=0.0)
-    tempoexecucao = models.FloatField('Tempo execucao', null=True, blank=True, default=0.0)
+    tempoexecucao = models.IntegerField('Tempo execucao',null=True, blank=True,default=0)
     tipo = models.ForeignKey(Tipo, on_delete=models.CASCADE)
     
     class Meta:
